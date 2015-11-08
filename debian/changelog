@@ -1,3 +1,9 @@
+lightsd (1.1.0-1) unstable; urgency=low
+
+  * First published release
+
+ -- Louis Opter <kalessin@kalessin.fr>  Sun, 08 Nov 2015 08:06:51 +0000
+
 lightsd (1.0.1-1) unstable; urgency=low
 
   * Initial release
