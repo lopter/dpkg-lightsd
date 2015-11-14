@@ -17,9 +17,9 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 ifeq (,$(wildcard /run))
-    RUNTIME_DIRECTORY=/var/run
+    RUNTIME_DIRECTORY=/var/run/lightsd
 else
-    RUNTIME_DIRECTORY=/run
+    RUNTIME_DIRECTORY=/run/lightsd
 endif
 
 # main packaging script based on dh7 syntax
@@ -36,6 +36,6 @@ override_dh_auto_configure:
 		-DLGTD_RUNTIME_DIRECTORY=$(RUNTIME_DIRECTORY)/lightsd
 
 override_dh_auto_install:
-	dh_auto_install
+	dh_auto_install --parallel
 	ls debian
 	rm -f debian/lightsd/usr/share/doc/lightsd/COPYING
