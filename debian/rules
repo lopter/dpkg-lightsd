@@ -16,10 +16,15 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 # package maintainers to append LDFLAGS
 #export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
+ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+    NUMJOBS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+    MAKEFLAGS += -j$(NUMJOBS)
+endif
+
 ifeq (,$(wildcard /run))
-    RUNTIME_DIRECTORY=/var/run/lightsd
+    RUNTIME_DIRECTORY=/var/run
 else
-    RUNTIME_DIRECTORY=/run/lightsd
+    RUNTIME_DIRECTORY=/run
 endif
 
 # main packaging script based on dh7 syntax
@@ -29,13 +34,15 @@ endif
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )
 override_dh_auto_configure:
-	dh_auto_configure --parallel --				\
+	dh_auto_configure --					\
 	    	-DCMAKE_BUILD_TYPE=RELEASE			\
 		-DCMAKE_INSTALL_PREFIX=/usr			\
 		-DCMAKE_LIBRARY_PATH=$(DEB_HOST_MULTIARCH)	\
 		-DLGTD_RUNTIME_DIRECTORY=$(RUNTIME_DIRECTORY)/lightsd
 
+override_dh_auto_build:
+	dh_auto_build --parallel
+
 override_dh_auto_install:
-	dh_auto_install --parallel
-	ls debian
+	dh_auto_install
 	rm -f debian/lightsd/usr/share/doc/lightsd/COPYING

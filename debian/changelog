@@ -1,3 +1,9 @@
+lightsd (1.1.0-2) unstable; urgency=low
+
+  * Fix parallel builds
+
+ -- Louis Opter <kalessin@kalessin.fr>  Sat, 14 Nov 2015 06:35:43 +0000
+
 lightsd (1.1.0-1) unstable; urgency=low
 
   * First published release
