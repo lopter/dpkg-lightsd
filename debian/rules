@@ -22,9 +22,9 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 endif
 
 ifeq (,$(wildcard /run))
-    RUNTIME_DIRECTORY=/var/run
-else
     RUNTIME_DIRECTORY=/run
+else
+    RUNTIME_DIRECTORY=/var/run
 endif
 
 # main packaging script based on dh7 syntax
