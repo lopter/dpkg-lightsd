@@ -2,8 +2,8 @@ Source: lightsd
 Section: contrib/utils
 Priority: optional
 Maintainer: Louis Opter <kalessin@kalessin.fr>
+Uploaders: Buildbot <buildbot@kalessin.fr>
 Build-Depends: debhelper (>= 9), cmake (>= 2.8.9), libevent-dev (>= 2.0.19)
-Suggests: python3, ipython3
 Standards-Version: 3.9.6
 Homepage: https://github.com/lopter/lightsd/
 Vcs-Git: https://github.com/lopter/dpkg-lightsd.git
@@ -12,6 +12,7 @@ Vcs-Browser: https://github.com/lopter/dpkg-lightsd/
 Package: lightsd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: python3, ipython3
 Description: Centralized daemon to control your LIFX bulbs
  lightsd discovers LIFX bulbs on the local network and acts as a central
  point of control for them via a JSON-RPC interface.
@@ -20,4 +21,4 @@ Description: Centralized daemon to control your LIFX bulbs
  sockets and allows you to retrieve the state of the bulbs or set their
  colors. Effects, grouping and de-grouping operations are also supported.
  .
- Visit http://lightsd.readthedocs.org/ for more informations.
+ Visit https://docs.lightsd.io/ for more information.

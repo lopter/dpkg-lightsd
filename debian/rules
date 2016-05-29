@@ -22,14 +22,14 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 endif
 
 ifeq (,$(wildcard /run))
-    RUNTIME_DIRECTORY=/run
-else
     RUNTIME_DIRECTORY=/var/run
+else
+    RUNTIME_DIRECTORY=/run
 endif
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ 
+	dh $@
 
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )

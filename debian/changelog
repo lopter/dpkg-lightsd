@@ -1,3 +1,9 @@
+lightsd (1.2.0~rc.1-1) unstable; urgency=low
+
+  * New upstream release 1.2.0-rc.1
+
+ -- Buildbot <buildbot@kalessin.fr>  Sun, 29 May 2016 02:46:27 +0000
+
 lightsd (1.1.2-1) unstable; urgency=low
 
   * New upstream release: fix LIFX LAN protocol v2 handling.
