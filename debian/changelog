@@ -1,3 +1,9 @@
+lightsd (1.2.0~rc.3-1) unstable; urgency=low
+
+  * New upstream release 1.2.0-rc.3
+
+ -- Buildbot <buildbot@kalessin.fr>  Sun, 03 Jul 2016 06:01:31 +0000
+
 lightsd (1.2.0~rc.2-1) unstable; urgency=low
 
   * New upstream release 1.2.0-rc.2
